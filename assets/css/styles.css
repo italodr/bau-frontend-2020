@@ -1,6 +1,9 @@
-/* ----------------------- RESET ------------------ */
 /* Based on: https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */
-/* Box sizing rules */
+/* ----------------------- RESET ------------------ */
+/**
+ * Box sizing rules
+ * https://developer.mozilla.org/es/docs/Web/CSS/box-sizing
+ */
 *,
 *::before,
 *::after {
@@ -8,8 +11,8 @@
 }
 
 /* Remove default padding */
-ul[class],
-ol[class] {
+ul,
+ol {
   padding: 0;
 }
 
@@ -20,8 +23,8 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
@@ -40,8 +43,8 @@ body {
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -79,22 +82,97 @@ select {
   }
 }
 
+/**
+ * rem - https://es.wikipedia.org/wiki/Em_(tipograf%C3%ADa)
+ *
+ * Por defecto el navegador tiene como tipografía base 16px, pero el usuario
+ * puede modificarlo desde las preferencias de su navegador.
+ * Una opción para configurar el tamaño de todo nuestro documento es utilizar
+ * esta medida base como referencia para calcular nuestros valores en rems.
+ *
+ * El fórmula para calcular los rems es el valor en pixels dividido por el
+ * tamaño de tipografía base (16px), por lo tanto, para obtener el valor en rems
+ * para 48px:
+ * 48 / 16 = 3
+ *
+ * por lo tanto:
+ * h1 {
+ *   font-size: 3rem;
+ * }
+ *
+ * Para simplificar el cálculo, una práctica muy común es convertir el tamaño de
+ * tipografía base a 10px, pero en su versión de porcentaje. Realizando una
+ * regla de tres simple, tomando 16px como el 100%, el resultado nos da 62.5%
+ *
+ * Con esta operación, el cálculo de los valores de rem resultan más sencillos,
+ * ya que nuestra tipografía base ahora es 10 y la división es más sencilla.
+ * Tomamos de ejemplo el mismo caso de 48px:
+ * 48 / 10 = 4.8
+ *
+ * y visualmente es mucho más fácil de ver el número en pixels original.
+ */
+
 /* ----------------------- GLOBAL ------------------ */
+
+html {
+  font-size: 62.5%; /* Tipografía base: 10px */
+}
+
+/**
+ * Cargamos las familias tipográficas en nuestro CSS
+ * Añadimos las familias "fallback", en caso que no cargue la familia "Work Sans"
+ * buscará la siguiente, en este caso la "Helvetica", y así hasta llegar a la
+ * última que es la "sans-serif" (o "serif") que será la por defecto del sistema.
+ * Normalmente se suele utilizar una o varias safe fonts
+ *
+ * https://www.w3schools.com/cssref/css_websafe_fonts.asp
+ */
+body {
+  font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.6rem; /* Tamaño de fuente: 16px */
+  line-height: 1.3;
+}
+
+h1,
+h2,
+h3,
+.secondary-font {
+  font-family: 'Crimson Text', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+h1 {
+  font-size: 3.6rem; /* Tamaño de fuente: 36px */
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 3.2rem; /* Tamaño de fuente: 32px */
+  line-height: 1.88;
+}
+
 a {
-  color: peru;
+  color: #a956d0;
+}
+
+/* ----------------------- UTILITIES ------------------ */
+/**
+ * El wrapper o contenedor, nos permite reaprovechar un solo estilo para
+ * varios elementos en nuestro HTML. Reducimos código y generamos un elemento
+ * modular que podemos aprovechar en muchas páginas y secciones.
+ */
+.wrapper {
+  margin: 0 auto;
+  max-width: 128rem;
+  padding: 0 1rem;
 }
 
 /* ----------------------- HEADER ------------------ */
-.header {
-  background: rebeccapurple;
-  color: white;
-}
 
 /* ----------------------- HEADER NAV ------------------ */
-.nav-item {
-  background: yellow;
-}
 
-.nav-link {
-  color: red;
+/* ----------------------- FOOTER ------------------ */
+.footer {
+  background: #1a1a1a;
+  color: #ffffff;
+  height: 6rem;
 }

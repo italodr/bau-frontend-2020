@@ -5,6 +5,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <!--
+            Cargamos nuestras familias tipográficas desde Google Fonts
+            Recordar de utilizar siempre la opción <link/> ya que mejora la
+            performance en comparación a la opción @import dentro del CSS.
+            Y recordar de cargarlas siempre antes de nuestros estilos, ya que no
+            funcionarían porque no existen, tiene que ser en orden.
+
+            https://www.freecodecamp.org/news/how-to-use-google-fonts-in-your-next-web-design-project-e1ad48f1adfa/
+        -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Work+Sans:wght@400;600&display=swap"
+            rel="stylesheet">
         <link href="assets/css/styles.css" rel="stylesheet" />
     </head>
 
@@ -16,43 +28,64 @@
             de varias líneas en HTML
         -->
         <header id="header" class="header">
-            <div>
-                <!--
-                    Incluímos un SVG en línea como un elemento HTML.
-                    También se puede incluir utilizando el elemento <img />, pero perdemos versatilidad para modificarlo con CSS o para añadir animaciones.
-                -->
-                <svg width="36" height="25" viewBox="0 0 36 25" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11 3L20.5263 19.5H1.47372L11 3Z" fill="#1A1A1A" />
-                    <path d="M25 22L15.4737 5.5L34.5263 5.5L25 22Z" fill="#1A1A1A" />
-                </svg>
+            <div class="wrapper">
+                <div class="logo">
+                    <!--
+                        Incluímos un SVG en línea como un elemento HTML.
+                        También se puede incluir utilizando el elemento <img />, pero perdemos versatilidad para modificarlo con CSS o para añadir animaciones.
+                    -->
+                    <svg width="36" height="25" viewBox="0 0 36 25" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 3L20.5263 19.5H1.47372L11 3Z" fill="#1A1A1A" />
+                        <path d="M25 22L15.4737 5.5L34.5263 5.5L25 22Z" fill="#1A1A1A" />
+                    </svg>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Contáctame</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Contáctame</a>
-                    </li>
-                </ul>
-            </nav>
         </header>
         <main>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, laboriosam,
-                saepe odit, <a href="">vitae commodi quidem</a> natus quaerat officia pariatur
-                similique quasi ipsam earum voluptas blanditiis voluptates dolore eius totam nam?
-            </p>
-            <!--
-                Incluimos una imagen, recordar de añadir siempre el atributo "alt". Hace nuestra página más accesible y nos proporciona información en caso que no se cargue la imagen correctamente.
-                Tener en cuenta que el contenido de este atributo solo es necesario cuando ofrece mayor información que la que existe en el contenido textual. Por ejemplo, una infografía.
-            -->
-            <img src="assets/img/main-image.jpg" alt="" />
+            <div class="wrapper">
+                <h1>Hola, soy Jonas Kahnwald, diseñador de interiores</h1>
+                <a href="">Sobre mi</a>
+
+                <h2>Sobre mi</h2>
+                <p>Mi visión: esa creación, cualquiera que sea la forma que adopte, debe mejorar la
+                    vida de tantas
+                    personas. como sea posible. Creo con vehemencia que este deber poético y
+                    político, rebelde y
+                    benevolente, pragmático y subversivo debe ser compartido por todos.</p>
+
+                <p>A los ojos de este consumado ciudadano del mundo, compartir su visión ética y
+                    humanista de un
+                    planeta más igualitario es un deber, si no un imperativo moral, que se traduce
+                    en proyectos poco
+                    convencionales que traen fértiles sorpresas. Es fácil adivinar su curso de
+                    acción: un objeto debe
+                    ser útil antes de ser hermoso.
+                </p>
+                <!--
+                    Incluimos una imagen, recordar de añadir siempre el atributo "alt". Hace nuestra página más accesible y nos proporciona información en caso que no se cargue la imagen correctamente.
+                    Tener en cuenta que el contenido de este atributo solo es necesario cuando ofrece mayor información que la que existe en el contenido textual. Por ejemplo, una infografía.
+                -->
+                <img src="assets/img/main-image.jpg" alt="" />
+            </div>
         </main>
-        <footer>
+        <footer class="footer">
+            <div class="wrapper">
+                Footer
+            </div>
         </footer>
 
     </body>
