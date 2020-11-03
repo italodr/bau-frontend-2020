@@ -168,7 +168,30 @@ a {
 
 /* ----------------------- HEADER ------------------ */
 
-/* ----------------------- HEADER NAV ------------------ */
+.header-container {
+  /**
+   * Para practicar más con flexbox (flex), pueden utilizar la siguiente web:
+   * https://flexboxfroggy.com/#es
+   */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ----------------------- NAVIGATION ------------------ */
+
+/**
+ * De momento ocultamos estos elementos para dispositivos móviles, siguiendo los
+ * principios de "Mobile First". Primero trabajamos la visualización en
+ * dispositivos móviles y vamos añadiendo en dispositivos más grandes
+ */
+.navigation {
+  display: none;
+}
+
+.menu-close {
+  display: none;
+}
 
 /* ----------------------- FOOTER ------------------ */
 .footer {
