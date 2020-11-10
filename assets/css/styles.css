@@ -168,6 +168,11 @@ a {
 
 /* ----------------------- HEADER ------------------ */
 
+.header {
+  position: fixed;
+  width: 100%;
+}
+
 .header-container {
   /**
    * Para practicar más con flexbox (flex), pueden utilizar la siguiente web:

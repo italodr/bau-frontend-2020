@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 05</title>
+    <style>
+      /**
+       * Normalizamos el alto del html y body para que tenga el mismo alto que
+       * la ventana de nuestro navegador
+       */
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        /**
+         * Background de image con patrón repetitivo
+         */
+        background: url(assets/img/flower.png);
+      }
+
+      /**
+        * Centrar el elemento en medio de la página
+        * Solo funciona si el alto del html y body es el alto de la ventana
+        * del navegador
+        */
+      .centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card {
+        margin: 1rem;
+        display: inline-block;
+      }
+
+      /**
+        * El elemento contenedor debe ser el relativo, para que el absoluto lo
+        * sea en relación a él
+        */
+      .dot {
+        position: relative;
+      }
+
+      /**
+        * Pseudo-elemento before
+        * CSS3 - ::before (recomendado)
+        * CSS2 - :before
+        */
+      .dot::before {
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 60px;
+        width: 60px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        /* dimension Z */
+      }
+
+      /**
+        * Reutilizamos la clase dot para crear el pseudo-elemento y utilizamos
+        * clases específicas para modificar solamente una propiedad, en este
+        * caso el color de fondo del elemento
+        */
+      .mint:before {
+        background: mediumaquamarine;
+      }
+
+      .pink:before {
+        background: pink;
+      }
+
+      .green:before {
+        background: cadetblue;
+      }
+
+      /* Para la demo */
+      .icon {
+        position: relative;
+        margin: 1rem 0 0 2rem;
+        width: 100px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+
+  <body class="centered">
+    <div>
+      <div class="card dot mint">
+        <img class="icon" src="assets/img/twitter.svg" alt="" />
+      </div>
+
+      <div class="card dot pink">
+        <img class="icon" src="assets/img/twitter.svg" alt="" />
+      </div>
+
+      <div class="card dot green">
+        <img class="icon" src="assets/img/twitter.svg" alt="" />
+      </div>
+    </div>
+  </body>
+
+</html>
