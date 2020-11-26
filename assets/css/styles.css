@@ -154,6 +154,10 @@ a {
   color: #a956d0;
 }
 
+p + p {
+  margin: 1.5rem 0 0;
+}
+
 /* ----------------------- UTILITIES ------------------ */
 /**
  * El wrapper o contenedor, nos permite reaprovechar un solo estilo para
@@ -166,11 +170,27 @@ a {
   padding: 0 1rem;
 }
 
+.button {
+  background: #a956d0;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  letter-spacing: 0.03rem;
+  line-height: 1;
+  min-width: 18rem;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 /* ----------------------- HEADER ------------------ */
 
 .header {
   position: fixed;
   width: 100%;
+  z-index: 9;
 }
 
 .header-container {
@@ -198,9 +218,92 @@ a {
   display: none;
 }
 
+/* ----------------------- BILLBOARD ------------------ */
+
+.billboard {
+  margin: 0 0 3rem;
+}
+
+.billboard .wrapper {
+  overflow: hidden;
+  position: relative;
+  max-height: 90vh;
+}
+
+.billboard__title,
+.billboard__description,
+.billboard__image {
+  margin: 0 0 2rem;
+}
+
+.billboard__content {
+  max-width: 56rem;
+}
+
+/* ----------------------- ABOUT ------------------ */
+
+.about__content {
+  padding: 3rem 0;
+}
+
+.profile-picture {
+  background: url(../img/profile.jpg) 50% no-repeat;
+  background-size: cover;
+  max-width: 32rem;
+}
+
+.profile-picture::before {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+  width: 100%;
+}
+
 /* ----------------------- FOOTER ------------------ */
+
 .footer {
   background: #1a1a1a;
   color: #ffffff;
   height: 6rem;
 }
+
+/* ----------------------- RESPONSIVE 960px ------------------ */
+@media (min-width: 60em) {
+  /* ----------------------- UTILITIES ------------------ */
+
+  .row {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  /* ----------------------- BILLBOARD ------------------ */
+
+  .billboard__image {
+    margin: 0;
+  }
+
+  .billboard__content {
+    background: #fff;
+    bottom: 0;
+    left: 4rem;
+    padding: 2rem 2rem 0.5rem;
+    position: absolute;
+  }
+
+  /* ----------------------- ABOUT ------------------ */
+
+  .about__content {
+    padding: 3rem 6rem;
+  }
+
+  .profile-picture {
+    max-width: initial;
+  }
+}
+/* ----------------------- END RESPONSIVE 960px ------------------ */
